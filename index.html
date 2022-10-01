@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+  <script src="/components/assets/cursor-listener.js"></script>
+  <script src="/components/assets/raycaster-autorefresh.js"></script>
+  <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite App</title>
+</head>
+
+<body>
+  <div id="app"></div>
+  <a-scene raycaster-autorefresh>
+    <a-assets>
+      <img id="skyTexture"
+      src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg">      <!--<a-asset-item id="ghost" src="assets/Ghost.gltf"></a-asset-item>-->
+     
+    </a-assets>
+
+    <a-camera>
+      <a-cursor></a-cursor>
+    </a-camera>
+
+    <a-box src="https://i.imgur.com/mYmmbrp.jpg" position="0 2 -5" rotation="0 45 45" scale="2 2 2" animation="property: object3D.position.y; to: 2.2; dir: alternate; dur: 2000; loop: true"></a-box>
+    <a-cylinder position="1 0.75 -3" cursor-listener radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+    <!--<a-asset-item id="ghost" src="assets/Ghost.gltf"></a-asset-item> this is a import of a item-->
+    <a-sky color="#ECECEC"></a-sky>
+    <a-entity environment="preset: forest; dressingAmount: 500"></a-entity>
+  </a-scene>
+
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>
